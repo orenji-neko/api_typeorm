@@ -3,7 +3,7 @@ import type { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { errorHandler } from "./_middleware/error-handler";
-import userController from "./users/users.controller";
+import userController from "./users/user.controller";
 
 const app = Express();
 dotenv.config();
@@ -20,5 +20,5 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 const port =
-  process.env.NODE_ENV === "production" ? process.env.PORT || 80 : 5000;
+  process.env.NODE_ENV === "production" ? process.env.PORT || 80 : 3000;
 app.listen(port, () => console.log(`Server listening on port ${port}`));
